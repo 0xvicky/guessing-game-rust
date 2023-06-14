@@ -1,23 +1,26 @@
-use std::io;//to use input output library
-use rand::Rng;
+fn main(){
+   //in rust we use snake convention
+   //let is used to initialise 
+   //so , by initially, the variable is immutable by default, then we have to make the variable mutable by "mut" keyword
+   let mut block_chain = "ethereum";
+   println!("Hello {}!",block_chain);
 
-fn main() {
-    println!("Hello, world!");
+   //also we can explicitly change the datatype of variable
+   let age:u8 = 9;
+   println!("VAr {}!",age);
 
-    println!("Enter your guess:");
-    let secret_number = rand::thread_rng().gen_range(1,101);
-    let mut guess = String::new(); //In rust, by default variables are immutable so we use "mut" keyword
+   //for float variables
+   let mut fl:f32 = 0.33434;
+    println!("Float:{}",fl);
 
-    io::stdin()
-    .read_line(&mut guess)
-    .expect("Failed to read msg.");//Here stdin give us handle the input, Also "read_line" takes the input and append it to the buffer, buffer here in this case is guess variable, ultimately the guess is assigned a value
+    //WE can declare same name to variables with name;
+    let name = "solana";
+    let name = "Ethereum";
 
-    println!("You guess: {}", guess);
+ 
+ println!("Blockchain:{}",name);
 
-    
-    //Now we need to generate random numbers, so we need dependency
-
+ //Constants: value will not be changed throughout the execution of the program
+const MY_AGE:i32 = 20;
+ println!("Age is:{}",MY_AGE);
 }
-
-
-
